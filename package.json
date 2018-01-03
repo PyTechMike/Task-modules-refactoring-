@@ -1,0 +1,34 @@
+{
+	"name": "task-modules",
+	"private": true,
+	"description": "Split code to modules",
+	"version": "1.0.0",
+	"license": "GPL-3.0",
+	"author": "Constantine Genchevsky",
+	"main": "src/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/atomspaceodua/task-modules-refactoring.git"
+	},
+	"keywords": [
+		"modules",
+		"webapp",
+		"home work",
+		"training task"
+	],
+	"scripts": {
+		"start": "neutrino start",
+		"build": "neutrino build"
+	},
+	"dependencies": {
+		"jquery": "~2.2.4"
+	},
+	"devDependencies": {
+		"neutrino-preset-svelte": "4.0.1",
+		"neutrino": "^7.0.0"
+	},
+	"engines": {
+		"node": ">=6.9.0",
+		"npm": ">=3.0.0"
+	}
+}
