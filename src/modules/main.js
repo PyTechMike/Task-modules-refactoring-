@@ -1,6 +1,9 @@
 var $ = require('jquery');
 var displayAllUsers = require('./display-all-users');
 var displayActiveUsers = require('./filter-active');
+var displayUsersByAge = require('./sort-by-age');
+var displayUsersByName = require('./sort-by-name');
+var displayLongNameUser = require('./sort-by-long-name');
 
 var dataService = {
 	getUsers: function (url, callback) {
@@ -74,48 +77,17 @@ getUsers(USERS_URL, displayActiveUsers);
 
 
 // #3
-function sortByAge(users) {
-	var usersData = users.concat();
-	usersData.sort(function (user1, user2) {
-		return user1.age > user2.age;
-	});
-	return usersData;
-}
-function displayUsersByAge(users) {
-	var usersData = format(users);
-	usersData = sortByAge(usersData);
-	displayUsers(usersByAgeTable, usersData);
-}
+
 getUsers(USERS_URL, displayUsersByAge);
 
 
 // #4
-function sortByName(users) {
-	var usersData = users.concat();
-	usersData.sort(function (user1, user2) {
-		return user1.fullName.localeCompare(user2.fullName);
-	});
-	return usersData;
-}
-function displayUsersByName(users) {
-	var usersData = format(users);
-	usersData = sortByName(usersData);
-	displayUsers(usersByNameTable, usersData);
-}
+
 getUsers(USERS_URL, displayUsersByName);
 
 
 // #5
-function filterLongName(users) {
-	return users.filter(function (user) {
-		return user.lastName.length >= 6;
-	});
-}
-function displayLongNameUser(users) {
-	var usersData = format(users);
-	usersData = filterLongName(usersData);
-	displayUsers(longNameUsersTable, usersData);
-}
+
 getUsers(USERS_URL, displayLongNameUser);
 
 
@@ -124,5 +96,8 @@ module.exports = {
 	displayUsers: displayUsers,
 	allUsersTable: allUsersTable,
 	activeUsersTable: activeUsersTable,
+	usersByAgeTable: usersByAgeTable,
+	usersByNameTable: usersByNameTable,
+	longNameUsersTable: longNameUsersTable,
 }
 
