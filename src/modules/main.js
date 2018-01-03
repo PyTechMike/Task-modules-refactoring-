@@ -1,4 +1,6 @@
 var $ = require('jquery');
+var displayAllUsers = require('./display-all-users');
+var displayActiveUsers = require('./filter-active');
 
 var dataService = {
 	getUsers: function (url, callback) {
@@ -63,24 +65,11 @@ function displayUsers(tableElement, users) {
 
 
 // #1
-function displayAllUsers(users) {
-	var usersData = format(users);
-	displayUsers(allUsersTable, usersData);
-}
 getUsers(USERS_URL, displayAllUsers);
 
 
 // #2
-function filterActive(users) {
-	return users.filter(function (user) {
-		return user.active
-	});
-}
-function displayActiveUsers(users) {
-	var usersData = format(users);
-	usersData = filterActive(usersData);
-	displayUsers(activeUsersTable, usersData);
-}
+
 getUsers(USERS_URL, displayActiveUsers);
 
 
@@ -128,3 +117,12 @@ function displayLongNameUser(users) {
 	displayUsers(longNameUsersTable, usersData);
 }
 getUsers(USERS_URL, displayLongNameUser);
+
+
+module.exports = {
+	format: format,
+	displayUsers: displayUsers,
+	allUsersTable: allUsersTable,
+	activeUsersTable: activeUsersTable,
+}
+
