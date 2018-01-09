@@ -1,7 +1,7 @@
 var $ = require('jquery');
 function displayAllUsers(users) {
-	var format = require('./main.js').format(users);
-	var displayUsers = require('./main.js').displayUsers;
+	var format = require('./format.js')(users);
+	var displayUsers = require('./display-users.js');
 	var usersData = format;
 	var allUsersTable = $('.all-users tbody');
 	// var allUsersTable = require('./main.js').allUsersTable;

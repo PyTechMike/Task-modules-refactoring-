@@ -7,8 +7,8 @@ function sortByAge(users) {
 	return usersData;
 }
 function displayUsersByAge(users) {
-	var format = require('./main.js').format(users);
-	var displayUsers = require('./main.js').displayUsers;
+	var format = require('./format.js')(users);
+	var displayUsers = require('./display-users.js');
 	var usersByAgeTable = $('.all-users-by-age tbody');
 	// var usersByAgeTable = require('./main.js').usersByAgeTable;
 	var usersData = format;

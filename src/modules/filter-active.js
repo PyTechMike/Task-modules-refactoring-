@@ -5,8 +5,8 @@ function filterActive(users) {
 	});
 }
 function displayActiveUsers(users) {
-	var format = require('./main.js').format(users);
-	var displayUsers = require('./main.js').displayUsers;
+	var format = require('./format.js')(users);
+	var displayUsers = require('./display-users.js');
 	var activeUsersTable = $('.active-users tbody');
 	// var activeUsersTable = require('./main.js').activeUsersTable;
 	var usersData = format;

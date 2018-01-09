@@ -7,8 +7,8 @@ function sortByName(users) {
 	return usersData;
 }
 function displayUsersByName(users) {
-	var format = require('./main.js').format(users);
-	var displayUsers = require('./main.js').displayUsers;
+	var format = require('./format.js')(users);
+	var displayUsers = require('./display-users.js');
 	var usersByNameTable = $('.all-users-by-name tbody');
 	// var usersByNameTable = require('./main.js').usersByNameTable;
 	var usersData = format;

@@ -5,8 +5,8 @@ function filterLongName(users) {
 	});
 }
 function displayLongNameUser(users) {
-	var format = require('./main.js').format(users);
-	var displayUsers = require('./main.js').displayUsers;
+	var format = require('./format.js')(users);
+	var displayUsers = require('./display-users.js');
 	var longNameUsersTable = $('.longname-users tbody');
 	// var longNameUsersTable = require('./main.js').longNameUsersTable;
 	var usersData = format;
