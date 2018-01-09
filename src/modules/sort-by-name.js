@@ -1,3 +1,4 @@
+var $ = require('jquery');
 function sortByName(users) {
 	var usersData = users.concat();
 	usersData.sort(function (user1, user2) {
@@ -8,7 +9,8 @@ function sortByName(users) {
 function displayUsersByName(users) {
 	var format = require('./main.js').format(users);
 	var displayUsers = require('./main.js').displayUsers;
-	var usersByNameTable = require('./main.js').usersByNameTable;
+	var usersByNameTable = $('.all-users-by-name tbody');
+	// var usersByNameTable = require('./main.js').usersByNameTable;
 	var usersData = format;
 	usersData = sortByName(usersData);
 	displayUsers(usersByNameTable, usersData);

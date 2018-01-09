@@ -15,11 +15,6 @@ var dataService = {
 	},
 };
 
-var allUsersTable = $('.all-users tbody');
-var activeUsersTable = $('.active-users tbody');
-var usersByAgeTable = $('.all-users-by-age tbody');
-var usersByNameTable = $('.all-users-by-name tbody');
-var longNameUsersTable = $('.longname-users tbody');
 var getUsers = dataService.getUsers;
 var USERS_URL = 'http://www.mocky.io/v2/55f748b33568195d044b3dc8';
 
@@ -94,10 +89,10 @@ getUsers(USERS_URL, displayLongNameUser);
 module.exports = {
 	format: format,
 	displayUsers: displayUsers,
-	allUsersTable: allUsersTable,
-	activeUsersTable: activeUsersTable,
-	usersByAgeTable: usersByAgeTable,
-	usersByNameTable: usersByNameTable,
-	longNameUsersTable: longNameUsersTable,
+	// allUsersTable: allUsersTable,
+	// activeUsersTable: activeUsersTable,
+	// usersByAgeTable: usersByAgeTable,
+	// usersByNameTable: usersByNameTable,
+	// longNameUsersTable: longNameUsersTable,
 }
 

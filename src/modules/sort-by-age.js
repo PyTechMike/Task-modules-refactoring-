@@ -1,3 +1,4 @@
+var $ = require('jquery');
 function sortByAge(users) {
 	var usersData = users.concat();
 	usersData.sort(function (user1, user2) {
@@ -8,7 +9,8 @@ function sortByAge(users) {
 function displayUsersByAge(users) {
 	var format = require('./main.js').format(users);
 	var displayUsers = require('./main.js').displayUsers;
-	var usersByAgeTable = require('./main.js').usersByAgeTable;
+	var usersByAgeTable = $('.all-users-by-age tbody');
+	// var usersByAgeTable = require('./main.js').usersByAgeTable;
 	var usersData = format;
 	usersData = sortByAge(usersData);
 	displayUsers(usersByAgeTable, usersData);
